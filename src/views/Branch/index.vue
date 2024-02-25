@@ -27,7 +27,7 @@ function actionButtonFormatter(cell) {
     const deleteButton = document.createElement("button");
     deleteButton.textContent = "Delete";
     deleteButton.className = "btn btn-danger btn-sm";
-    deleteButton.onclick = () => store.deletePermissions(cell.getRow().getData().id); // Call deletePermissions function with ID
+    deleteButton.onclick = () => store.deleteBranchs(cell.getRow().getData().id);
     return deleteButton;
 }
 

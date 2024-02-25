@@ -9,7 +9,7 @@ export const useStoreBranch = defineStore("storeBranch", () => {
   const showModal = ref(false)
   const showModal1= ref(false) 
   const search = ref('');
-  const modalTitle = ref('Create Permissions');
+  const modalTitle = ref('Create ');
   const confirmText = 'Create';
   const cancelText = 'Cancel';
 
@@ -126,7 +126,7 @@ export const useStoreBranch = defineStore("storeBranch", () => {
 
  
 
-  async function deletePermissions(permissions) {
+  async function deleteBranchs(branchs) {
     const confirmationResult = await Swal.fire({
       title: 'Are you sure?',
       text: 'You won\'t be able to revert this!',
@@ -139,12 +139,12 @@ export const useStoreBranch = defineStore("storeBranch", () => {
   
     if (confirmationResult.isConfirmed) {
       try {
-        await window.axios.delete(`stockEntries/${permissions}`);
+        await window.axios.delete(`stockEntries/${branchs}`);
         getBranchDetails();
   
         Swal.fire({
           icon: 'success',
-          title: 'Permission Deleted Successfully!',
+          title: 'Deleted Successfully!',
           timer: 3000,
           showConfirmButton: true,
         });
@@ -152,8 +152,8 @@ export const useStoreBranch = defineStore("storeBranch", () => {
         // Handle error
         Swal.fire({
           icon: 'error',
-          title: 'Error Deleting Permission',
-          text: 'An error occurred while deleting the permission.',
+          title: 'Error Deleting ',
+          text: 'An error occurred while deleting the .',
           showConfirmButton: true,
         });
       }
@@ -161,7 +161,7 @@ export const useStoreBranch = defineStore("storeBranch", () => {
       // User cancelled the deletion
       Swal.fire({
         icon: 'info',
-        title: 'Permission Deletion Cancelled',
+        title: ' Deletion Cancelled',
         timer: 3000,
         showConfirmButton: true,
       });
@@ -173,7 +173,7 @@ export const useStoreBranch = defineStore("storeBranch", () => {
     closeDelete,
     openModal,showModal,showModal1,closeModal,data,form,errors,
     loading,resetForm,storeBranchDetails,branchDetails,
-    getBranchDetails,deletePermissions,
+    getBranchDetails,deleteBranchs,
     modalTitle,confirmText,cancelText,
     handleConfirm,handleCancel,search
   };});
